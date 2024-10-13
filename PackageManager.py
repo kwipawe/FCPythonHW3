@@ -78,7 +78,7 @@ for i in range(elements_count):
             most_waste_weight = MAX_WEIGHT - current_weight_in_parcel
             most_empty_parcel_nr = parcel_count
 
-        #tworzenie nowej paczki jesli element sie nie mieswci
+        #tworzenie nowej paczki jesli element sie nie miesci
         parcel_count += 1
         current_weight_in_parcel = element_weight
         total_elements_weight += element_weight
@@ -98,5 +98,5 @@ if current_weight_in_parcel > most_waste_weight:
 #wyswietlenie wynikow
 print(f"Liczba elementow: {elements_count}.")
 print(f"Liczba paczek: {parcel_count}.")
-print(f"Łączna waga elementów wysłanych: {total_elements_weight} kg")
-print(f"Paczka z największą ilością pustych kilogramów: {most_empty_parcel_nr}: {most_waste_weight}")
+print(f"Łączna waga elementów wysłanych: {total_elements_weight} kg.")
+print(f"Paczka z największą ilością pustych kilogramów: {most_empty_parcel_nr}: {most_waste_weight}.")
