@@ -62,6 +62,7 @@ parcel_count = 1
 current_weight_in_parcel = 0
 most_empty_parcel_nr = 1
 most_waste_weight = 0
+all_waste_weight = 0
 #petla pobierajaca wage elementow
 for i in range(elements_count):
     element_weight = int(input(f"Podaj wagę elementu nr {i + 1} (Waga elementu musi wynosić między 1 a 10 kg): "))
@@ -77,6 +78,7 @@ for i in range(elements_count):
         if MAX_WEIGHT - current_weight_in_parcel > most_waste_weight:
             most_waste_weight = MAX_WEIGHT - current_weight_in_parcel
             most_empty_parcel_nr = parcel_count
+            all_waste_weight += most_waste_weight
 
         #tworzenie nowej paczki jesli element sie nie miesci
         parcel_count += 1
@@ -93,10 +95,11 @@ print(f"Paczka {parcel_count} zapełniona: {current_weight_in_parcel} kg.\n")
 if current_weight_in_parcel > most_waste_weight:
     most_waste_weight = MAX_WEIGHT - current_weight_in_parcel
     most_empty_parcel_nr = parcel_count
-
+    all_waste_weight += most_waste_weight
 
 #wyswietlenie wynikow
 print(f"Liczba elementow: {elements_count}.")
 print(f"Liczba paczek: {parcel_count}.")
 print(f"Łączna waga elementów wysłanych: {total_elements_weight} kg.")
+print(f"Łączna ilość pustych kilogramów: {all_waste_weight}")
 print(f"Paczka z największą ilością pustych kilogramów: {most_empty_parcel_nr}: {most_waste_weight}.")
